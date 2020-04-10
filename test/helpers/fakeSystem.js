@@ -68,7 +68,6 @@ const System = {
 	},
 	ensureExecuted: name => {
 		const m = System.registry[name];
-		console.log(m);
 		if (!m) throw new Error(`Module ${name} not registered`);
 		if (!m.executed) {
 			m.executed = true;
@@ -80,6 +79,7 @@ const System = {
 			}
 			m.mod.execute();
 		}
+
 		return m.exports;
 	}
 };
